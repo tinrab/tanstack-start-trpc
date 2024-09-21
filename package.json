@@ -1,0 +1,40 @@
+{
+  "name": "tanstack-start-trpc",
+  "private": true,
+  "sideEffects": false,
+  "type": "module",
+  "scripts": {
+    "dev": "vinxi dev",
+    "build": "vinxi build",
+    "start": "vinxi start",
+    "format": "biome format --write .",
+    "lint": "biome lint"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.56.2",
+    "@tanstack/react-query-devtools": "^5.56.2",
+    "@tanstack/react-router": "^1.58.3",
+    "@tanstack/react-router-with-query": "^1.58.3",
+    "@tanstack/router-devtools": "^1.58.3",
+    "@tanstack/router-plugin": "^1.58.4",
+    "@tanstack/start": "^1.58.5",
+    "@trpc/client": "11.0.0-rc.522",
+    "@trpc/react-query": "11.0.0-rc.522",
+    "@trpc/server": "11.0.0-rc.522",
+    "@vitejs/plugin-react": "^4.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "vinxi": "0.4.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.2",
+    "@types/node": "^22.5.5",
+    "@types/react": "^18.3.8",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.7",
+    "vite-tsconfig-paths": "^5.0.1"
+  }
+}
