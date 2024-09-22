@@ -4,6 +4,8 @@ import { Outlet, ScrollRestoration } from '@tanstack/react-router';
 import { Body, Head, Html, Meta, Scripts } from '@tanstack/start';
 import type { RouterContext } from '~/router';
 
+import mainCss from '~/styles/main.css?url';
+
 export const Route = createRootRouteWithContext<RouterContext>()({
   meta: () => [
     {
@@ -17,6 +19,7 @@ export const Route = createRootRouteWithContext<RouterContext>()({
       title: 'TanStack Start - tRPC',
     },
   ],
+  links: () => [{ rel: 'stylesheet', href: mainCss }],
   component: RootComponent,
   notFoundComponent: () => (
     <div>

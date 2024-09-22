@@ -8,7 +8,6 @@ import { queryClient } from '~/query-client';
 export type RouterContext = {
   queryClient: QueryClient;
   trpcQueryUtils: typeof trpcQueryUtils;
-  host: string;
 };
 
 export function createRouter() {
@@ -18,10 +17,6 @@ export function createRouter() {
       context: {
         queryClient,
         trpcQueryUtils,
-        host:
-          process.env.NODE_ENV === 'development'
-            ? 'http://localhost:3000'
-            : 'TODO',
       } satisfies RouterContext,
       defaultPreload: 'intent',
       Wrap: function WrapComponent({ children }) {

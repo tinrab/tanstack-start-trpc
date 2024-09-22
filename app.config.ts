@@ -1,9 +1,9 @@
 import { defineConfig } from '@tanstack/start/config';
+import type { Router } from 'vinxi/dist/types/lib/router-mode';
 import tsConfigPaths from 'vite-tsconfig-paths';
 
-export default defineConfig({
+const app = defineConfig({
   deployment: { preset: 'node-server' },
-  // routers: { api: { entry: '...' } },
   vite: {
     plugins: () => [
       tsConfigPaths({
@@ -12,3 +12,23 @@ export default defineConfig({
     ],
   },
 });
+
+app.config.server.experimental = { websocket: true, asyncContext: true };
+
+app.addRouter({
+  name: 'websocket',
+  type: 'http',
+  handler: './app/ws.ts',
+  target: 'server',
+  base: '/_ws',
+} as Router);
+app.addRouterPlugins(
+  ({ name }) => name === 'websocket',
+  () => [
+    tsConfigPaths({
+      projects: ['./tsconfig.json'],
+    }),
+  ],
+);
+
+export default app;

@@ -1,6 +1,7 @@
 # tRPC with TanStack Start
 
-My current tRPC setup working with TanStack Start (1.58).
+My current tRPC setup working with TanStack Start (1.58). Supports both HTTP and
+WebSocket transports.
 
-API and tRPC route handling is done in `./app/api.ts`. All API routes must be
-declared in the entry filed specified under `routers.api` in `app.config.ts`.
+Key setup is done in `app.config.ts`, `app/api.ts`, `app/ws.ts` and
+`app/trpc/client.ts` files.
